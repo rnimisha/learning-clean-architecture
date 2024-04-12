@@ -3,6 +3,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
+namespace Clean.Domain.Entities;
 public class BaseEntity{
 
     [Key, Column("id")]
