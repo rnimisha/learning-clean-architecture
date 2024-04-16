@@ -1,7 +1,7 @@
 
-namespace Clean.Domain.Usecases;
+namespace Clean.Application.Contracts.Persistence;
 
-public interface IUseCase<TEntity>{
+public interface IBaseRepository<TEntity>{
 
     Task<TEntity> GetOneAsync(Guid id);
 

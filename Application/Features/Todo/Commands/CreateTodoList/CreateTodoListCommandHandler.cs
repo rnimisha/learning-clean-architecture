@@ -10,6 +10,10 @@ public class CreateTodoListCommandHandler : IRequestHandler<CreateTodoListComman
 {
     public Task<Todo> Handle(CreateTodoListCommand request, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        try{
+            throw new NotImplementedException();
+        }catch(Exception e){
+            throw new Exception(e.Message);
+        }
     }
 }
