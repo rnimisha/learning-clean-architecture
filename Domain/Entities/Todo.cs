@@ -10,6 +10,6 @@ public class Todo: BaseEntity{
     public bool IsCompleted {get; set;} = false;
 
     [Required]
-    public required Guid User {get; set;} 
+    public required Guid User {get; set;}
 
 }
