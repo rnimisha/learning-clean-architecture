@@ -1,23 +1,16 @@
-var builder = WebApplication.CreateBuilder(args);
+namespace Clean.Api;
 
-builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+public class Program{
 
-var app = builder.Build();
+    public static void Main(string[] args){
+        try{
+            var builder = WebApplication.CreateBuilder(args);
+            var app = builder.ConfigureServices().ConfigurePipeline();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
+            app.Run();
+
+        }catch(Exception e){
+            throw new Exception(e.Message);
+        }
+    }
 }
-
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
-
-app.MapControllers();
-
-
-app.Run();
